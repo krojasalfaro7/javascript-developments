@@ -24,3 +24,28 @@ const sin2 = new Singleton();
 console.log(sin1.random);
 console.log(sin2.random);
 const sin3 = Singleton.getInstance();
+
+// WeekDays Example
+class WeekDay {
+
+    weekDaysES = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes'];
+    weekDaysEN = ['Monday', 'Thuersday', 'Weeday', 'Thuesday', 'Friday'];
+
+    constructor(lang) {
+        this.lang = lang;
+        if (WeekDay.instance) {
+            return WeekDay.instance;
+        }
+        WeekDay.instance = this
+    }
+
+    getWeeDays() {
+        return this.lang == 'ES' ? this.weekDaysES : this.weekDaysEN;
+    }
+}
+
+const weekDays1 = new WeekDay('ES');
+console.log(weekDays1.getWeeDays());
+
+const weekDays2 = new WeekDay('EN');
+console.log(weekDays2.getWeeDays());
