@@ -1,10 +1,10 @@
 class SaleContext {
 
     constructor(strategy) {
-        this.strategy = strategy;
+        this.setStrategy(strategy);
     }
 
-    setContext(strategy) {
+    setStrategy(strategy) {
         this.strategy = strategy;
     }
 
@@ -55,11 +55,11 @@ let saleRes = saleContext.calculate(200);
 console.log("Regular sale result: ", saleRes);
 
 // Discount Sale
-saleContext.setContext(new DiscountStrategy(0.24, 100));
+saleContext.setStrategy(new DiscountStrategy(0.24, 100));
 saleRes = saleContext.calculate(200);
 console.log("Discount sale result: ", saleRes);
 
 // Foreing Sale
-saleContext.setContext(new ForeingSaleStrategy())
+saleContext.setStrategy(new ForeingSaleStrategy())
 saleRes = saleContext.calculate(210);
 console.log("Foreing sale result: ", saleRes);
