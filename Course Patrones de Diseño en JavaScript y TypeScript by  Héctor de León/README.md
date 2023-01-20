@@ -4,7 +4,7 @@
 
 1. Creacionales (Singleton)
 2. Esctructura
-3. Comportamiento
+3. Comportamiento (Strategy)
 
 ## Instalation
     nvm install 14.21.1
